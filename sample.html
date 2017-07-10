@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- load jquery and data-judge wherever they are -->
+<script src="jquery.min.js" ></script>
+<script src="data-judge.js" ></script>
+<script>
+//validate forms on submit
+$(document).ready(function(){
+    $('form').judge({});
+});
+</script>
+</head>
+<body>
+<h1> A form to play with</h1>
+<form>
+<pre>
+Required
+<input id="req" name="req" type="text" data-judge-required />
+
+Meat (required for pudding)
+<input type="text" name="meat" />
+Pudding (only with meat)
+<input type="text" data-judge-and="meat" data-judge-and-hint="How can you have any pudding if you don't eat your meat?"/>
+
+Contact
+Phone
+<input id="req" name="phone" type="text" data-judge-or="email" />
+Email
+<input id="req" name="email" type="text" />
+
+Regex .com
+<input type="text" data-judge-regex="\.com$"/>
+
+<input type="submit" >
+</pre>
+</form>
+</body>
+</html>
